@@ -1,0 +1,2 @@
+# NUC125BSP_USCI_printf_UART_Rx
+ NUC125BSP_USCI_printf_UART_Rx
