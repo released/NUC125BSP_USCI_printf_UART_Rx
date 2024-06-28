@@ -72,14 +72,6 @@ unsigned char RXBUFFER[UART_RX_RCV_LEN] = {0};
 unsigned char uart_rcv_cnt = 0;
 volatile uint32_t u32rcvtick = 0;
 
-#define LED1_RED_GPIO                                   (PC8)
-#define LED1_BLUE_GPIO                                  (PC9)
-#define LED1_GREEN_GPIO                                 (PC10)
-
-#define LED2_RED_GPIO                                   (PC11)
-#define LED2_BLUE_GPIO                                  (PC12)
-#define LED2_GREEN_GPIO                                 (PC13)
-
 /*_____ M A C R O S ________________________________________________________*/
 
 /*_____ F U N C T I O N S __________________________________________________*/
@@ -581,25 +573,6 @@ void USCI_Init(void)
 	#endif	
 }
 
-
-/*
-    LED1_PWM_RED : PA.10
-    LED1_PWM_GREEN : PB.4
-    LED1_PWM_BLUE : PB.5
-
-    LED2_PWM_BLUE : PC.2
-    LED2_PWM_GREEN : PC.1
-    LED2_PWM_RED: PC.0
-
-    LED1_RED_GPIO : PC.8
-    LED1_BLUE_GPIO : PC.9
-    LED1_GREEN_GPIO : PC.10
-
-    LED2_RED_GPIO : PC.11
-    LED2_BLUE_GPIO : PC.12
-    LED2_GREEN_GPIO : PC.13
-
-*/
 void GPIO_Init(void)
 {
     SYS->GPB_MFPL = (SYS->GPB_MFPL & ~(SYS_GPB_MFPL_PB4MFP_Msk)) | (SYS_GPB_MFPL_PB4MFP_GPIO);	
